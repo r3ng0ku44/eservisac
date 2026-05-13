@@ -198,7 +198,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue-500); box-s
   .reveal { opacity: 1; transform: none; }
 }
 
-/* ===== VERSIÓN POR PÁGINAS INTERNAS ===== */
+/* Paginas Internas */
 html { scroll-behavior: auto; }
 .page-view { display: none; min-height: calc(100svh - 82px); padding-top: 132px; animation: pageFade .35s ease; }
 .page-view.active { display: block; }
@@ -244,14 +244,14 @@ html { scroll-behavior: auto; }
 }
 
 
-/* ===== AJUSTES PROFESIONALES SOLICITADOS ===== */
+/*  AJUSTES  */
 .brand img,
 .footer-grid img {
   background: #fff;
   object-fit: contain;
 }
 
-/* Slider más elegante en Inicio */
+/* Slider en Inicio */
 .hero-bg {
   background-position: center;
   background-size: cover;
@@ -286,7 +286,7 @@ html { scroll-behavior: auto; }
 }
 @keyframes dotProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-/* Imágenes del portafolio: encuadradas, sin deformarse */
+/* Imágenes del portafolio */
 .portfolio-main img,
 .service-card img,
 .service-banner img,
@@ -436,7 +436,7 @@ html { scroll-behavior: auto; }
   max-height: 64px;
 }
 
-/* Iconos más profesionales para misión, visión y promesa */
+/* Iconos para misión, visión y promesa */
 .mission-icon,
 .contact-icon {
   width: 56px;
@@ -494,7 +494,7 @@ html { scroll-behavior: auto; }
           mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2a7 7 0 0 1 7 7c0 4.79-5.06 11.2-6.21 12.6a1 1 0 0 1-1.58 0C10.06 20.2 5 13.79 5 9a7 7 0 0 1 7-7Zm0 2a5 5 0 0 0-5 5c0 2.91 2.84 7.22 5 9.94c2.16-2.72 5-7.03 5-9.94a5 5 0 0 0-5-5Zm0 2.5A2.5 2.5 0 1 1 9.5 9A2.5 2.5 0 0 1 12 6.5Z'/%3E%3C/svg%3E");
 }
 
-/* Contacto con foto + mapa */
+/* Contacto con imagen + mapa */
 .contact-simple {
   display: grid;
   grid-template-columns: .84fr 1.16fr;
@@ -571,7 +571,7 @@ html { scroll-behavior: auto; }
   .contact-photo-overlay { left: 18px; right: 18px; bottom: 16px; }
 }
 
-/* ===== AJUSTE CONTACTO: FOTO COMPLETA + EMAIL + FACEBOOK ===== */
+/* AJUSTE CONTACTO: FOTO COMPLETA + EMAIL + FACEBOOK */
 .contact-photo-card {
   background: linear-gradient(135deg, #071f3f, #eef3f7);
 }
@@ -631,4 +631,66 @@ html { scroll-behavior: auto; }
 @media (max-width: 420px) {
   .contact-visuals { grid-template-rows: 230px 260px; }
   .map-panel, .map-panel iframe { min-height: 260px; }
+}
+
+/* AJUSTE PORTAFOLIO MÓVIL: BOTÓN DESCARGAR VISIBLE EN CELULAR */
+@media (max-width: 760px) {
+  #portafolio .portfolio-layout {
+    display: grid;
+    gap: 24px;
+  }
+  #portafolio .portfolio-main {
+    display: grid;
+    min-height: auto !important;
+    overflow: visible;
+    border-radius: 24px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow: 0 24px 70px rgba(0,0,0,.25);
+  }
+  #portafolio .portfolio-main::after {
+    display: none;
+  }
+  #portafolio .portfolio-main > img {
+    width: 100%;
+    height: 430px;
+    min-height: 0 !important;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px 24px 0 0;
+  }
+  #portafolio .portfolio-panel {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: block;
+    padding: 24px;
+    border-radius: 0 0 24px 24px;
+    background: linear-gradient(145deg, rgba(2,27,58,.96), rgba(0,59,122,.82));
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: none;
+  }
+  #portafolio .portfolio-panel h3 {
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+  }
+  #portafolio .portfolio-panel p {
+    margin-bottom: 22px;
+    color: rgba(255,255,255,.84);
+  }
+  #portafolio .portfolio-panel .btn {
+    width: 100%;
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 480px) {
+  #portafolio .portfolio-main > img {
+    height: 380px;
+  }
+  #portafolio .portfolio-panel {
+    padding: 22px 18px;
+  }
 }
