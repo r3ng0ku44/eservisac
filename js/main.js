@@ -74,7 +74,7 @@ showPage(location.hash.replace('#', '') || 'inicio', false);
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-/* Slider de la pantalla principal: si gusta ud edita aquí las imágenes si desea puede cambiarlas. Atte linder */
+/* Slider de la pantalla principal: edita aquí las imágenes si deseas cambiarlas. */
 const slides = [...document.querySelectorAll('.hero-slide')];
 const dots = [...document.querySelectorAll('.slider-dots button')];
 let currentSlide = 0;
@@ -119,7 +119,7 @@ form?.addEventListener('submit', (event) => {
     `Mensaje:\n${mensaje}`
   );
 
-  /* EDITAR AQUÍ: reemplazar aqui  ventas@eservisac.com.pe por el correo oficial de destino. atte linder */
+  /* EDITAR AQUÍ: reemplaza ventas@eservisac.com.pe por el correo oficial de destino. */
   window.location.href = `mailto:ventas@eservisac.com.pe?subject=${subject}&body=${body}`;
   note.textContent = 'Tu consulta está lista para enviarse desde tu correo.';
 });
