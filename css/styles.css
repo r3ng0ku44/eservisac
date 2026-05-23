@@ -727,3 +727,241 @@ html { scroll-behavior: auto; }
     height: 29px;
   }
 }
+
+
+/* ===== AJUSTE FINAL PORTAFOLIO MÓVIL Y WHATSAPP ===== */
+/* En celulares, el bloque del catálogo queda visible y proporcionado debajo de la imagen */
+@media (max-width: 760px) {
+  #portafolio .portfolio-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0 !important;
+    height: auto !important;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--blue-800);
+  }
+
+  #portafolio .portfolio-main > img {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+  }
+
+  #portafolio .portfolio-panel {
+    position: static !important;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 28px 24px 28px;
+    border-radius: 0;
+    background: linear-gradient(145deg, rgba(0,59,122,.98), rgba(2,27,58,.96));
+    border: 0;
+    backdrop-filter: none;
+  }
+
+  #portafolio .portfolio-panel h3 {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    margin-bottom: 18px;
+  }
+
+  #portafolio .portfolio-panel p {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  #portafolio .portfolio-panel .btn {
+    width: 100%;
+    min-height: 58px;
+    padding: 15px 22px;
+    border-radius: 999px;
+    font-size: 1rem;
+  }
+}
+
+/* Botón flotante WhatsApp más proporcionado en todas las pantallas */
+.whatsapp-float {
+  min-width: 176px;
+  min-height: 66px;
+  justify-content: space-between;
+  padding: 10px 12px 10px 22px !important;
+  border-radius: 999px !important;
+}
+
+.whatsapp-text {
+  display: inline-block !important;
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.whatsapp-icon {
+  width: 52px !important;
+  height: 52px !important;
+  flex: 0 0 52px;
+}
+
+.whatsapp-icon::before {
+  width: 31px !important;
+  height: 31px !important;
+}
+
+@media (max-width: 760px) {
+  .whatsapp-float {
+    right: 14px;
+    bottom: 14px;
+    min-width: 150px;
+    min-height: 58px;
+    gap: 8px;
+    padding: 8px 9px 8px 16px !important;
+  }
+
+  .whatsapp-text {
+    font-size: .9rem !important;
+  }
+
+  .whatsapp-icon {
+    width: 46px !important;
+    height: 46px !important;
+    flex-basis: 46px;
+  }
+
+  .whatsapp-icon::before {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .whatsapp-text {
+    display: inline-block !important;
+  }
+
+  .whatsapp-float {
+    min-width: 142px;
+  }
+}
+
+/* ===== AJUSTE CONTACTO: ALMACENES, PROYECTOS Y REDES BAJO MAPA ===== */
+#contacto .contact-cards {
+  gap: 14px;
+}
+#contacto .contact-cards article {
+  padding: 18px 20px;
+}
+#contacto .contact-cards p {
+  line-height: 1.55;
+}
+#contacto .contact-social-actions {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+#contacto .contact-social-actions .btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 54px;
+  white-space: nowrap;
+}
+
+@media (min-width: 981px) {
+  #contacto .contact-simple {
+    grid-template-columns: .9fr 1.1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  #contacto .contact-visuals {
+    min-height: auto;
+    grid-template-rows: 300px minmax(360px, 1fr) auto;
+    gap: 16px;
+  }
+  #contacto .map-panel,
+  #contacto .map-panel iframe {
+    min-height: 360px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  #contacto .contact-social-actions {
+    grid-template-columns: 1fr;
+  }
+  #contacto .contact-social-actions .btn {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 760px) {
+  #contacto .contact-cards article {
+    padding: 16px;
+  }
+  #contacto .contact-visuals {
+    grid-template-rows: 230px 300px auto;
+  }
+  #contacto .map-panel,
+  #contacto .map-panel iframe {
+    min-height: 300px;
+  }
+  #contacto .contact-social-actions .btn {
+    max-width: none;
+  }
+}
+
+/* ===== AJUSTE FINAL CONTACTO: REDES SOCIALES VERTICALES ===== */
+@media (min-width: 981px) {
+  #contacto .contact-simple {
+    align-items: stretch;
+  }
+
+  #contacto .contact-visuals {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 300px 300px 1fr;
+    gap: 16px;
+  }
+
+  #contacto .map-panel,
+  #contacto .map-panel iframe {
+    min-height: 300px;
+    height: 300px;
+  }
+
+  #contacto .contact-social-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-content: center;
+    padding: 24px;
+    min-height: 230px;
+    border-radius: 28px;
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(0,59,122,.10);
+    box-shadow: var(--shadow);
+  }
+
+  #contacto .contact-social-actions .btn {
+    width: 100%;
+    max-width: none;
+    min-height: 58px;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 980px) {
+  #contacto .contact-social-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
